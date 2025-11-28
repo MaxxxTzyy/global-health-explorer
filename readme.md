@@ -79,6 +79,7 @@ project-root/
 └─ node_modules/       # Installed dependencies (created by npm install)
 
 
+<<<<<<< HEAD
 🛠️ Setup & Installation
 1. Prerequisites
 You need:
@@ -439,5 +440,7 @@ ________________________________________
 📝 Usage & License
 This project is intended for learning, teaching, and research support.
 You are free to modify and extend it to fit your own datasets, courses, or analytical needs.
+=======
+>>>>>>> 4b15e8dcad2c7cb377246a1fd0a388afdfb00a24
 
 
