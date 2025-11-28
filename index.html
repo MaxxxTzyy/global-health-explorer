@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Global Health Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Global Health Explorer</h1>
+    <p>Eksplorasi Life Expectancy dan indikator kesehatan per negara (dataset Kaggle).</p>
+  </header>
+
+    <main>
+    <!-- CONTROLS: negara 1, negara 2, indikator, filter tahun -->
+    <section id="controls">
+      <div class="control-row">
+        <div class="control-group">
+          <label for="country-select">Negara 1:</label>
+          <select id="country-select">
+            <!-- diisi otomatis dari JS -->
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="country-select-2">Negara 2 (opsional):</label>
+          <select id="country-select-2">
+            <option value="">— (tidak ada) —</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="indicator-select">Pilih indikator:</label>
+          <select id="indicator-select">
+            <option value="Life Expectancy">Life Expectancy</option>
+            <option value="Infant Mortality Rate">Infant Mortality Rate</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <div class="control-group">
+          <label for="start-year">Tahun awal (opsional):</label>
+          <input type="number" id="start-year" placeholder="mis. 1990" />
+        </div>
+
+        <div class="control-group">
+          <label for="end-year">Tahun akhir (opsional):</label>
+          <input type="number" id="end-year" placeholder="mis. 2019" />
+        </div>
+
+        <div class="control-group control-group-button">
+          <label>&nbsp;</label>
+          <button id="load-data">Tampilkan Data</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RINGKASAN -->
+    <section id="stats">
+      <h2>Ringkasan</h2>
+      <div id="summary"></div>
+    </section>
+
+    <section id="table-section">
+  <div class="section-header">
+    <h2>Data (Life Expectancy & Infant Mortality)</h2>
+    <button id="export-csv">Export CSV</button>
+  </div>
+  <table id="data-table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+
+    <!-- CHART -->
+    <section id="chart-section">
+      <h2>Grafik</h2>
+      <canvas id="life-chart"></canvas>
+    </section>
+
+    <!-- INSIGHT + REPORT -->
+    <section id="insight-section">
+      <h2>Insight Analitis</h2>
+      <div id="insight"></div>
+
+      <div id="report-tools">
+        <button id="generate-report">Buat Ringkasan Laporan</button>
+        <textarea
+          id="report-output"
+          rows="6"
+          placeholder="Ringkasan laporan akan muncul di sini, lalu bisa kamu copy ke Word."
+        ></textarea>
+      </div>
+    </section>
+
+    <!-- DASHBOARD TERSIMPAN -->
+    <section id="dashboard-section">
+      <h2>Dashboards Tersimpan</h2>
+
+      <div id="save-dashboard">
+        <input
+          type="text"
+          id="dashboard-name"
+          placeholder="Nama dashboard (mis. Indo LifeExp)"
+        />
+        <button id="save-dashboard-btn">Simpan Dashboard</button>
+      </div>
+
+      <ul id="dashboard-list">
+        <!-- daftar dashboard tersimpan muncul di sini -->
+      </ul>
+    </section>
+  </main>
+
+
+  <!-- Library -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
